@@ -16,11 +16,11 @@ public class Demo {
         //必填
         String apiUrl = "http://localhost:8082/gateway";
         //必填
-        String appKey = "";
+        String appKey = "wnw";
         //必填
-        String appSecret = "";
+        String appSecret = "123";
         //如果开启加密，则必填
-        String encodingAesKey = "";
+        String encodingAesKey = "1234567890123456";
         Client client = new Client(apiUrl,appKey,appSecret,encodingAesKey);
         //入参赋值
         List bodyList = new ArrayList<>();
