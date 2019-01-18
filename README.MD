@@ -31,3 +31,5 @@
             System.out.println(response.getErrorMessage());
         }
 ```
+
+[使用postman进行接口调试](https://github.com/ngarihealth/openapi-sdk-java/wiki/使用postman进行接口调试)
