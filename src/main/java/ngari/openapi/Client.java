@@ -56,7 +56,12 @@ public class Client {
         request.addHeader(SystemHeader.X_CA_NONCE, UUID.randomUUID().toString());
         request.addHeader(SystemHeader.X_CA_TIMESTAMP, String.valueOf(System.currentTimeMillis()));
         String jsonStr= JSONUtils.toString(request.getBodys());
-        String encryptStr = AESUtils.encrypt(jsonStr, request.getEncodingAesKey());
+        String encryptStr;
+        if(StringUtils.isNotEmpty(request.getEncodingAesKey())){
+            encryptStr = AESUtils.encrypt(jsonStr, request.getEncodingAesKey());
+        }else {
+            encryptStr =jsonStr;
+        }
         String contentMd5 = MessageDigestUtil.base64AndMD5(encryptStr);
         request.addHeader(SystemHeader.X_CONTENT_MD5, contentMd5);
         String signature = SignUtil.sign(request.getAppSecret(), request.getHeaders());
