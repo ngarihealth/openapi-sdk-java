@@ -29,7 +29,7 @@ public class Response {
     private JSONResponseBean jsonResponseBean;
 
     public boolean isSuccess(){
-		return (200==statusCode&&jsonResponseBean!=null&&"200".equals(jsonResponseBean.getCode()));
+		return (200==statusCode&&jsonResponseBean!=null&&200==jsonResponseBean.getCode());
 	}
     
     public Response() {
