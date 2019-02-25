@@ -1,7 +1,5 @@
 package ngari.openapi.request.province;
 
-import com.ngari.his.recipe.mode.OrderItemTO;
-
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
