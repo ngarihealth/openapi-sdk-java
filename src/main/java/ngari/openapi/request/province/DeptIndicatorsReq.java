@@ -21,6 +21,7 @@ public class DeptIndicatorsReq implements java.io.Serializable {
 
     private String deptID;//开展诊疗的临床科室代码
     private String deptName;//开展诊疗的临床科室代码
+    private String deptType;//1临床科室 2药剂科室 3 护理科室、4医技科室
     private String desc; // 诊疗科目描述
     private String note; // 诊疗科目备注
     @NotNull
@@ -108,5 +109,13 @@ public class DeptIndicatorsReq implements java.io.Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getDeptType() {
+        return deptType;
+    }
+
+    public void setDeptType(String deptType) {
+        this.deptType = deptType;
     }
 }

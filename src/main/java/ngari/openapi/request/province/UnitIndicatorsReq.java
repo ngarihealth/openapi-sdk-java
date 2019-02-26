@@ -16,6 +16,7 @@ public class UnitIndicatorsReq implements java.io.Serializable {
     @NotNull
     private String organName; // 机构名称 校验：开展互联网诊疗业务的机构名称与行政审批平台备案的名称是否一致
     private String secondName; // 机构第二名称
+    private String introduction;//简介
     @NotNull
     private String internetPermit; // 是否批准为互联网医院  校验：开展互联网诊疗业务的机构是否在卫健委行政审批平台审批通过
     private String registerNumber; // 机构登记号
@@ -29,6 +30,8 @@ public class UnitIndicatorsReq implements java.io.Serializable {
 
     private String legalRepresentative; //	法定代表人
     private String chargeRepresentative; // 主要负责人
+    @NotNull
+    private String areaCode; //地区编码
     private String address; // 地址
     private String postcode; // 邮编
     private String areaName; // 医院所在行政区划名称
@@ -224,5 +227,21 @@ public class UnitIndicatorsReq implements java.io.Serializable {
 
     public void setUnitID(String unitID) {
         this.unitID = unitID;
+    }
+
+    public String getAreaCode() {
+        return areaCode;
+    }
+
+    public void setAreaCode(String areaCode) {
+        this.areaCode = areaCode;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
     }
 }

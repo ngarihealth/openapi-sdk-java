@@ -51,7 +51,7 @@ public class FuzhenIndicatorsReq implements java.io.Serializable{
     private Double returnVisitPrice;//	复诊价格
     @NotNull
     private String answerFlag;//	复诊是否回复
-    private String refuseTime;//	复诊拒绝/取消时间
+    private Date refuseTime;//	复诊拒绝/取消时间
     private String refuseReason;//	复诊拒绝/取消原因
     private String refuseType;//	复诊拒绝类别
     private String processDataURL;//	复诊过程数据查询地址
@@ -62,7 +62,6 @@ public class FuzhenIndicatorsReq implements java.io.Serializable{
 //    private String scoring;//评分
 //    private String evaluation;//评价内容
 //    private String complaints;//投诉建议
-    @NotNull
     private String originalDiagnosis;//上次就诊诊断名称
     @NotNull
     private String thisDiagnosis;//本次就诊诊断名称
@@ -295,11 +294,11 @@ public class FuzhenIndicatorsReq implements java.io.Serializable{
         this.answerFlag = answerFlag;
     }
 
-    public String getRefuseTime() {
+    public Date getRefuseTime() {
         return refuseTime;
     }
 
-    public void setRefuseTime(String refuseTime) {
+    public void setRefuseTime(Date refuseTime) {
         this.refuseTime = refuseTime;
     }
 

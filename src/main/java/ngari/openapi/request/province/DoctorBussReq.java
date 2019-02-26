@@ -15,6 +15,7 @@ public class DoctorBussReq implements java.io.Serializable {
     private String doctorName;
     @NotNull
     private String doctorCertID;
+    private String doctorWorkType;
     @NotNull
     private String businessType;
     @NotNull
@@ -86,5 +87,13 @@ public class DoctorBussReq implements java.io.Serializable {
 
     public void setOrganName(String organName) {
         this.organName = organName;
+    }
+
+    public String getDoctorWorkType() {
+        return doctorWorkType;
+    }
+
+    public void setDoctorWorkType(String doctorWorkType) {
+        this.doctorWorkType = doctorWorkType;
     }
 }

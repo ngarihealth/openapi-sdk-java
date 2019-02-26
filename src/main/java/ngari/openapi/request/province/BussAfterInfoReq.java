@@ -28,7 +28,7 @@ public class BussAfterInfoReq implements java.io.Serializable{
     private String  doctorName;
 
     private Integer  satisfaction; //满意度
-    private Integer  scoring;//评分
+    private Double  scoring;//评分
     private String  evaluation;//评价内容
     private String  complaints;//投诉建议
     private String evaluationPeople; // 评价人
@@ -122,11 +122,11 @@ public class BussAfterInfoReq implements java.io.Serializable{
         this.satisfaction = satisfaction;
     }
 
-    public Integer getScoring() {
+    public Double getScoring() {
         return scoring;
     }
 
-    public void setScoring(Integer scoring) {
+    public void setScoring(Double scoring) {
         this.scoring = scoring;
     }
 

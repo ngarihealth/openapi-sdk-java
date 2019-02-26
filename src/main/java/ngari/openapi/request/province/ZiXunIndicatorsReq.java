@@ -27,7 +27,7 @@ public class ZiXunIndicatorsReq implements java.io.Serializable{
     private String doctorCertID;//	医师身份证号
     private String doctorName;//	医生姓名
     private String patientCertType;//	患者证件
-    @NotNull
+//    @NotNull
     private String patientCertID;//	患者证件号
     private String patientName;//	患者姓名
     private Integer age;//	患者年龄
@@ -43,7 +43,7 @@ public class ZiXunIndicatorsReq implements java.io.Serializable{
     private String content;//	用户咨询内容
     @NotNull
     private String answerFlag;//	咨询是否回复
-    private String refuseTime;//	咨询拒绝/取消时间
+    private Date refuseTime;//	咨询拒绝/取消时间
     private String refuseReason;//	咨询拒绝/取消原因
     private String refuseType;//	咨询拒绝类别
     private String processDataURL;//	咨询过程数据查询地址
@@ -243,11 +243,11 @@ public class ZiXunIndicatorsReq implements java.io.Serializable{
         this.answerFlag = answerFlag;
     }
 
-    public String getRefuseTime() {
+    public Date getRefuseTime() {
         return refuseTime;
     }
 
-    public void setRefuseTime(String refuseTime) {
+    public void setRefuseTime(Date refuseTime) {
         this.refuseTime = refuseTime;
     }
 

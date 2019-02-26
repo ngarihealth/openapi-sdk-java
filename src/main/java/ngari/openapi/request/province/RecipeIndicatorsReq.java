@@ -1,5 +1,7 @@
 package ngari.openapi.request.province;
 
+import com.ngari.his.recipe.mode.OrderItemTO;
+
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
@@ -21,8 +23,8 @@ public class RecipeIndicatorsReq implements Serializable {
     @NotNull
     private String  originalDiagnosis;//上次就诊诊断名称
     @NotNull
-    private String  SubjectCode;//	开方医师所属专业代码（诊疗科目代码）
-    private String  SubjectName;//	开方医师所属专业名称（诊疗科目名称）
+    private String  subjectCode;//	开方医师所属专业代码（诊疗科目代码）
+    private String  subjectName;//	开方医师所属专业名称（诊疗科目名称）
     private String  deptID;//	医师所属科室代码
     private String  deptName;//	医师所属科室名称
     private String  doctorId;//	医生ID
@@ -53,6 +55,8 @@ public class RecipeIndicatorsReq implements Serializable {
     private String  recipeUniqueID;//	互联网医院处方唯一号
     @NotNull
     private String  recipeID;//	互联网医院处方号
+    private String  recipeRecordNo;//处方医保备案号
+    private String  rationalFlag;//是否经过合理用药判断标志
     private String  rationalDrug;//	合理用药审核结果
     private String  CAInfo;//	处方CA认证文件信息
     private String  icdCode;//	诊断ICD码
@@ -138,19 +142,19 @@ public class RecipeIndicatorsReq implements Serializable {
     }
 
     public String getSubjectCode() {
-        return SubjectCode;
+        return subjectCode;
     }
 
     public void setSubjectCode(String subjectCode) {
-        SubjectCode = subjectCode;
+        this.subjectCode = subjectCode;
     }
 
     public String getSubjectName() {
-        return SubjectName;
+        return subjectName;
     }
 
     public void setSubjectName(String subjectName) {
-        SubjectName = subjectName;
+        this.subjectName = subjectName;
     }
 
     public String getDeptID() {
@@ -511,5 +515,21 @@ public class RecipeIndicatorsReq implements Serializable {
 
     public void setOrganName(String organName) {
         this.organName = organName;
+    }
+
+    public String getRecipeRecordNo() {
+        return recipeRecordNo;
+    }
+
+    public void setRecipeRecordNo(String recipeRecordNo) {
+        this.recipeRecordNo = recipeRecordNo;
+    }
+
+    public String getRationalFlag() {
+        return rationalFlag;
+    }
+
+    public void setRationalFlag(String rationalFlag) {
+        this.rationalFlag = rationalFlag;
     }
 }
