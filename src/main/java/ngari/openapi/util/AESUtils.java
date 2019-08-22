@@ -1,5 +1,6 @@
 package ngari.openapi.util;
 
+import ngari.openapi.constant.Constants;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
@@ -26,11 +27,11 @@ public class AESUtils {
     }
 
     public static String encrypt(String data, String key) throws Exception {
-        return Base64.encodeBase64String(encrypt(data.getBytes(), toKey(key.getBytes()), DEFAULT_CIPHER_ALGORITHM));
+        return Base64.encodeBase64String(encrypt(data.getBytes(Constants.ENCODING), toKey(key.getBytes()), DEFAULT_CIPHER_ALGORITHM));
     }
 
     public static String decrypt(String data, String key) throws Exception {
-        return new String(decrypt(Base64.decodeBase64(data.getBytes()), toKey(key.getBytes()), DEFAULT_CIPHER_ALGORITHM));
+        return new String(decrypt(Base64.decodeBase64(data.getBytes(Constants.ENCODING)), toKey(key.getBytes()), DEFAULT_CIPHER_ALGORITHM));
     }
 
     public static byte[] encrypt(byte[] data, Key key) throws Exception {
