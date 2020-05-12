@@ -18,8 +18,9 @@ public class SignUtil {
     /**
      * 需要参与签名的请求头
      */
-    private static final List<String> SIGN_HEADER_LIST = Arrays.asList("X-Service-Id","X-Service-Method","X-Ca-Key",
-            "X-Ca-Nonce","X-Ca-Timestamp","X-Content-MD5");
+
+    private static final List<String> SIGN_HEADER_LIST = Arrays.asList("X-Ca-Key","X-Ca-Nonce","X-Ca-Timestamp"
+            ,"X-Content-MD5","X-Service-Id","X-Service-Method");
     /**
      * 计算签名
      *
@@ -48,14 +49,13 @@ public class SignUtil {
      * 构建待签名Http头
      *
      * @param headers 请求中所有的Http头
-     * @param signHeaderList 自定义参与签名Header前缀
+     * @param signHeaderList 自定义参与签名Header前缀，需排序后传入
      * @return 待签名Http头
      */
     public static String buildHeaders(Map<String, String> headers, List<String> signHeaderList) {
 
     	List<String> sbList=new ArrayList<>();
     	if (null != signHeaderList) {
-    		Collections.sort(signHeaderList);
     		if (null != headers) {
     			Map<String, String> sortMap = new TreeMap<String, String>();
     			sortMap.putAll(headers);
