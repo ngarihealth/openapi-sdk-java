@@ -6,15 +6,15 @@
 
   <groupId>com.ngarihealth</groupId>
   <artifactId>openapi-sdk-java</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-RELEASE</version>
   <packaging>jar</packaging>
   <name>openapi-sdk-java</name>
 
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
