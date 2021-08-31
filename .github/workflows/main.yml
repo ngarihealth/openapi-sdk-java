@@ -27,8 +27,8 @@ jobs:
       # 新加入安装ros脚本
       - name: Set up ros
         run: |
-          wget-q https://www.virtualBox.org/download/oracle_vBox_2016.asc
-          sudo apt-key add oracle_vBox_2016.asc
+          wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc
+          sudo apt-key add oracle_vbox_2016.asc
       # 3. 发布到Maven中央仓库
       - name: Publish to Maven Central Repo
         # 这里用到了其他人写的action脚本，详细可以去看他的文档。
