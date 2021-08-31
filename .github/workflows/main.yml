@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     # 任务的步骤
     steps:
+      # 新加入安装ros脚本
+      - name: Set up ros
+        run: |
+          wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc
+          sudo apt-key add oracle_vbox_2016.asc
       # 1. 声明 checkout 仓库代码到工作区
       - name: Checkout Git Repo
         uses: actions/checkout@v2
@@ -24,11 +29,6 @@ jobs:
           server-username: ${{ secrets.OSSRH_USER }}
           server-password: ${{ secrets.OSSRH_PASSWORD }}
           gpg-passphrase:  ${{ secrets.GPG_PASSWORD }}
-      # 新加入安装ros脚本
-      - name: Set up ros
-        run: |
-          wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc
-          sudo apt-key add oracle_vbox_2016.asc
       # 3. 发布到Maven中央仓库
       - name: Publish to Maven Central Repo
         # 这里用到了其他人写的action脚本，详细可以去看他的文档。
