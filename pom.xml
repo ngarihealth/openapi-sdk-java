@@ -6,7 +6,7 @@
 
   <groupId>com.ngarihealth</groupId>
   <artifactId>openapi-sdk-java</artifactId>
-  <version>1.0-RELEASE</version>
+  <version>1.1-RELEASE</version>
   <packaging>jar</packaging>
   <name>openapi-sdk-java</name>
   <description>openapi-sdk-java</description>
