@@ -14,8 +14,9 @@ jobs:
       # 新加入安装ros脚本
       - name: Set up ros
         run: |
-          wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc
-          sudo apt-key add oracle_vbox_2016.asc
+          gpg --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys  2AA7D17A7C815F76C23BACAF99525C1DDFEC8966
+          gpg --armor --export 2AA7D17A7C815F76C23BACAF99525C1DDFEC8966
+          apt-key add -
       # 1. 声明 checkout 仓库代码到工作区
       - name: Checkout Git Repo
         uses: actions/checkout@v2
