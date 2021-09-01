@@ -27,8 +27,8 @@ jobs:
       # 新加入安装ros脚本
       - name: Set up ros
         run: |
-          wget http://packages.ros.org/ros.key -O -
-          sudo apt-key add ros.key
+          gpg --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys  2AA7D17A7C815F76C23BACAF99525C1DDFEC8966
+          gpg --armor --export 2AA7D17A7C815F76C23BACAF99525C1DDFEC8966 | apt-key add -
       # 3. 发布到Maven中央仓库
       - name: Publish to Maven Central Repo
         # 这里用到了其他人写的action脚本，详细可以去看他的文档。
